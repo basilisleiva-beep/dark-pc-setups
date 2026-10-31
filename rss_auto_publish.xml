@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Dark PC Setups - Visual Search Feed</title>
+    <link>https://basilisleiva-beep.github.io/dark-pc-setups/</link>
+    <description>Dark PC Setups visual search feed</description>
+    <language>en-us</language>
+    <item>
+      <title>Dark PC Setup with Purple LED Backlight</title>
+      <guid isPermaLink="false">pin_01_aesthetic_hero_16cb33</guid>
+      <description>Single monitor desk setup with a purple LED glow behind the screen. Save it for your next room makeover.</description>
+      <pubDate>Sat, 31 Oct 2026 23:00:00 +0000</pubDate>
+      <media:content url="https://basilisleiva-beep.github.io/dark-pc-setups/pins/pin_01_aesthetic_hero_16cb33.png" medium="image" type="image/png" />
+      <enclosure url="https://basilisleiva-beep.github.io/dark-pc-setups/pins/pin_01_aesthetic_hero_16cb33.png" length="1237220" type="image/png" />
+    </item>
+    <item>
+      <title>Dark Dual Monitor Setup with Teal Glow</title>
+      <guid isPermaLink="false">pin_02_floating_gear_69fc73</guid>
+      <description>One vertical and one horizontal monitor on a dark desk with soft teal backlighting. A clean idea for a low-light workspace.</description>
+      <pubDate>Sat, 31 Oct 2026 23:15:00 +0000</pubDate>
+      <media:content url="https://basilisleiva-beep.github.io/dark-pc-setups/pins/pin_02_floating_gear_69fc73.png" medium="image" type="image/png" />
+      <enclosure url="https://basilisleiva-beep.github.io/dark-pc-setups/pins/pin_02_floating_gear_69fc73.png" length="1134329" type="image/png" />
+    </item>
+    <item>
+      <title>Red LED Gaming Room with Multiple Monitors</title>
+      <guid isPermaLink="false">pin_03_mood_palette_b7e806</guid>
+      <description>Multi-monitor gaming room with red ambient lighting and acoustic wall panels. Save it for your next gaming room build.</description>
+      <pubDate>Sat, 31 Oct 2026 23:30:00 +0000</pubDate>
+      <media:content url="https://basilisleiva-beep.github.io/dark-pc-setups/pins/pin_03_mood_palette_b7e806.png" medium="image" type="image/png" />
+      <enclosure url="https://basilisleiva-beep.github.io/dark-pc-setups/pins/pin_03_mood_palette_b7e806.png" length="1377535" type="image/png" />
+    </item>
+    <item>
+      <title>Teal PC Setup with Backlit Keyboard</title>
+      <guid isPermaLink="false">pin_04_dual_mode_856743</guid>
+      <description>Dark desk with a teal-lit monitor, backlit mechanical keyboard and glowing mouse. A moody setup idea to save.</description>
+      <pubDate>Sat, 31 Oct 2026 23:45:00 +0000</pubDate>
+      <media:content url="https://basilisleiva-beep.github.io/dark-pc-setups/pins/pin_04_dual_mode_856743.png" medium="image" type="image/png" />
+      <enclosure url="https://basilisleiva-beep.github.io/dark-pc-setups/pins/pin_04_dual_mode_856743.png" length="1539910" type="image/png" />
+    </item>
+  </channel>
+</rss>
