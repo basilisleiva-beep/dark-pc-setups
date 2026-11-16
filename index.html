@@ -6,44 +6,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Dark desk and PC setups for late nights, and The Night Shift Desk: a calm new-tab page for people who work or study at night.">
   <meta name="p:domain_verify" content="6f50d6c13fb81b317ff7c9dda2d3a770">
+  <script src="https://gumroad.com/js/gumroad-embed.js" defer></script>
   <style>
-    :root { --bg:#0b0b10; --panel:#15151d; --text:#ecebf2; --muted:#a6a3b5; --accent:#b79cff; --accent-ink:#17122b; }
+    :root { --bg:#0b0b10; --panel:#15151d; --text:#ecebf2; --muted:#a6a3b5; --accent:#b79cff; --accent-ink:#17122b; --glow:#2a2140; }
     * { box-sizing:border-box; }
     body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
     a { color:var(--accent); }
     .wrap { max-width:1100px; margin:0 auto; padding:0 16px; }
-    header { padding:28px 0 8px; }
+    header { padding:28px 0 8px; display:flex; justify-content:space-between; align-items:center; }
     header p { margin:0; letter-spacing:.18em; text-transform:uppercase; font-size:.8rem; color:var(--muted); }
     .product { display:grid; grid-template-columns:1.4fr 1fr; gap:32px; align-items:center; margin:24px 0 48px; padding:24px;
-      background:radial-gradient(120% 140% at 30% 0%, #2a2140 0%, var(--panel) 55%); border:1px solid #262633; border-radius:20px; }
+      background:radial-gradient(120% 140% at 30% 0%, var(--glow) 0%, var(--panel) 55%); border:1px solid #262633; border-radius:20px; transition:background .3s ease; }
     .product > * { min-width:0; }
     .product img { width:100%; height:auto; border-radius:12px; display:block; }
     h1 { font-size:clamp(1.8rem,3.4vw,2.6rem); line-height:1.15; margin:0 0 12px; }
     .product p { color:var(--muted); margin:0 0 20px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
     .cta { display:inline-block; background:var(--accent); color:var(--accent-ink); font-weight:700; text-decoration:none;
-      padding:14px 28px; border-radius:999px; font-size:1.05rem; }
-    .cta:hover, .cta:focus-visible { background:#cbb8ff; }
+      padding:14px 28px; border-radius:999px; font-size:1.05rem; border:none; cursor:pointer; }
+    .cta:hover, .cta:focus-visible { filter:brightness(1.1); }
     .cta:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+    .cta-ghost { display:inline-block; background:transparent; color:var(--text); border:1px solid #353548; font-weight:600;
+      padding:13px 20px; border-radius:999px; font-size:.95rem; cursor:pointer; text-decoration:none; }
+    .cta-ghost:hover { border-color:var(--accent); color:var(--accent); }
     .price { display:block; margin-top:12px; font-size:.9rem; color:var(--muted); }
+    /* Interactive Live Sandbox (Variant B) */
+    .sandbox { background:#0c0c12; border:1px solid #2a2a3a; border-radius:14px; padding:20px; min-height:300px;
+      display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 20px 50px rgba(0,0,0,.55); }
+    .sandbox-top { display:flex; justify-content:space-between; align-items:center; font-size:.8rem; color:var(--muted); }
+    .theme-dots { display:flex; gap:8px; }
+    .theme-dot { width:16px; height:16px; border-radius:50%; border:2px solid transparent; cursor:pointer; padding:0; }
+    .theme-dot.active { border-color:#fff; transform:scale(1.15); }
+    .sb-clock { font-size:clamp(2.4rem,4vw,3.4rem); font-weight:700; letter-spacing:-.02em; text-align:center; margin:14px 0 4px; font-variant-numeric:tabular-nums; }
+    .sb-greet { text-align:center; color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+    .sb-timer-box { background:#14141e; border:1px solid #262635; border-radius:12px; padding:12px 16px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .sb-timer-val { font-size:1.35rem; font-weight:600; font-variant-numeric:tabular-nums; color:var(--accent); }
+    .sb-btn { background:#232333; color:var(--text); border:1px solid #34344a; border-radius:8px; padding:6px 12px; font-size:.82rem; cursor:pointer; }
+    .sb-btn:hover { border-color:var(--accent); }
+    .sb-links { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:14px; }
+    .sb-chip { font-size:.78rem; color:var(--muted); background:#161621; border:1px solid #242434; padding:5px 11px; border-radius:999px; }
+    .compat { font-size:.78rem; color:var(--muted); margin-top:10px; display:block; }
     h2 { font-size:1.3rem; margin:0 0 16px; }
     .gallery { columns:4 220px; column-gap:14px; }
     .gallery img { width:100%; height:auto; margin:0 0 14px; border-radius:12px; display:block; break-inside:avoid; }
     footer { padding:32px 0 48px; color:var(--muted); font-size:.85rem; }
+    [data-variant="a"] .only-b { display:none !important; }
+    [data-variant="b"] .only-a { display:none !important; }
     @media (max-width:760px) { .product { grid-template-columns:1fr; padding:16px; gap:20px; } .gallery { columns:2; column-gap:10px; } .gallery img { margin-bottom:10px; } }
   </style>
 </head>
-<body>
+<body data-variant="a">
   <div class="wrap">
-    <header><p>The Night Shift Desk</p></header>
+    <header>
+      <p>The Night Shift Desk</p>
+    </header>
+
     <section class="product" aria-labelledby="product-title">
-      <img src="img/the-night-shift-desk.png" alt="The Night Shift Desk start page: clock, search, quick links, tasks and a focus timer on a dark background" width="1280" height="720">
+      <!-- Variant A: Static Image -->
+      <img class="only-a" src="img/the-night-shift-desk.png" alt="The Night Shift Desk start page: clock, search, quick links, tasks and a focus timer on a dark background" width="1280" height="720">
+
+      <!-- Variant B: Interactive Live Sandbox -->
+      <div class="sandbox only-b" aria-label="Interactive live demo of The Night Shift Desk">
+        <div class="sandbox-top">
+          <span>LIVE INTERACTIVE DEMO</span>
+          <div class="theme-dots" role="group" aria-label="Theme selector">
+            <button class="theme-dot active" style="background:#b79cff" data-accent="#b79cff" data-glow="#2a2140" title="Purple Glow" aria-label="Purple theme"></button>
+            <button class="theme-dot" style="background:#5eead4" data-accent="#5eead4" data-glow="#133136" title="Teal Glow" aria-label="Teal theme"></button>
+            <button class="theme-dot" style="background:#fbbf24" data-accent="#fbbf24" data-glow="#382914" title="Amber Glow" aria-label="Amber theme"></button>
+          </div>
+        </div>
+        <div>
+          <div class="sb-clock" id="sbClock">23:42</div>
+          <div class="sb-greet">Quiet hours. Zero distractions.</div>
+          <div class="sb-timer-box">
+            <div>
+              <div style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;">Focus Timer</div>
+              <div class="sb-timer-val" id="sbTimer">25:00</div>
+            </div>
+            <div style="display:flex;gap:6px;">
+              <button class="sb-btn" id="sbStart">Start</button>
+              <button class="sb-btn" id="sbReset">Reset</button>
+            </div>
+          </div>
+        </div>
+        <div class="sb-links">
+          <span class="sb-chip">Chrome</span>
+          <span class="sb-chip">Firefox</span>
+          <span class="sb-chip">Edge</span>
+          <span class="sb-chip">Works Offline</span>
+        </div>
+      </div>
+
       <div>
-        <h1 id="product-title">A calm new-tab page for late nights</h1>
-        <p>Clock, search, quick links, tonight's tasks and a focus timer, in three soft glow themes. Works offline, no accounts, no tracking.</p>
-        <a class="cta" href="https://thenightshiftdesk.gumroad.com/l/night-startpage">Get it</a>
-        <span class="price">From €7 on Gumroad</span>
+        <h1 id="product-title" class="only-a">A calm new-tab page for late nights</h1>
+        <h1 class="only-b">Turn every new tab into a calm dark workspace</h1>
+
+        <p class="only-a">Clock, search, quick links, tonight's tasks and a focus timer, in three soft glow themes. Works offline, no accounts, no tracking.</p>
+        <p class="only-b">Test the live clock, focus timer, and 3 ambient themes on the left. Instant download — delivered to your email for your desktop browser.</p>
+
+        <div class="cta-row">
+          <a class="cta only-a" id="ctaA" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=ab_a">Get it</a>
+          <a class="cta gumroad-button only-b" id="ctaB" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=ab_b" data-gumroad-single-product="true">Get Startpage — €7</a>
+          <button class="cta-ghost only-b" id="sendToPcBtn" type="button">Send to my PC</button>
+        </div>
+        <span class="price only-a">From €7 on Gumroad</span>
+        <span class="compat only-b">Compatible with Chrome, Edge, Brave &amp; Firefox • Apple Pay / Card</span>
       </div>
     </section>
+
     <h2>Dark desk setups</h2>
     <div class="gallery">
       <img src="pins/pin_01_aesthetic_hero_16cb33.png" alt="Dark PC Setup with Purple LED Backlight" width="1000" height="1500" loading="lazy">
@@ -65,5 +135,96 @@
     </div>
     <footer>Setup photos by Unsplash and Pixabay contributors, credited on each Pin.</footer>
   </div>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var forced = params.get("ab");
+      var variant = (forced === "a" || forced === "b") ? forced : localStorage.getItem("nsd_ab_variant");
+      if (variant !== "a" && variant !== "b") {
+        variant = Math.random() < 0.5 ? "a" : "b";
+      }
+      localStorage.setItem("nsd_ab_variant", variant);
+      document.body.setAttribute("data-variant", variant);
+
+      function track(eventName) {
+        try {
+          var log = JSON.parse(localStorage.getItem("nsd_ab_events") || "[]");
+          log.push({ v: variant, ev: eventName, pin: params.get("pin") || "", t: Date.now() });
+          if (log.length > 50) log = log.slice(-50);
+          localStorage.setItem("nsd_ab_events", JSON.stringify(log));
+        } catch (e) {}
+      }
+      track("view");
+
+      var ctaA = document.getElementById("ctaA");
+      var ctaB = document.getElementById("ctaB");
+      if (ctaA) ctaA.addEventListener("click", function () { track("cta_click"); });
+      if (ctaB) ctaB.addEventListener("click", function () { track("cta_click"); });
+
+      // Interactive Sandbox Clock & Focus Timer (Variant B)
+      function updateClock() {
+        var d = new Date();
+        var hh = String(d.getHours()).padStart(2, "0");
+        var mm = String(d.getMinutes()).padStart(2, "0");
+        var el = document.getElementById("sbClock");
+        if (el) el.textContent = hh + ":" + mm;
+      }
+      updateClock();
+      setInterval(updateClock, 15000);
+
+      var seconds = 1500, timerId = null;
+      var timerEl = document.getElementById("sbTimer");
+      var startBtn = document.getElementById("sbStart");
+      var resetBtn = document.getElementById("sbReset");
+      function renderTimer() {
+        var m = String(Math.floor(seconds / 60)).padStart(2, "0");
+        var s = String(seconds % 60).padStart(2, "0");
+        if (timerEl) timerEl.textContent = m + ":" + s;
+      }
+      if (startBtn) {
+        startBtn.addEventListener("click", function () {
+          track("demo_timer_toggle");
+          if (timerId) { clearInterval(timerId); timerId = null; startBtn.textContent = "Start"; }
+          else {
+            startBtn.textContent = "Pause";
+            timerId = setInterval(function () { if (seconds > 0) { seconds--; renderTimer(); } }, 1000);
+          }
+        });
+      }
+      if (resetBtn) {
+        resetBtn.addEventListener("click", function () {
+          if (timerId) { clearInterval(timerId); timerId = null; if (startBtn) startBtn.textContent = "Start"; }
+          seconds = 1500; renderTimer();
+        });
+      }
+
+      document.querySelectorAll(".theme-dot").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          document.querySelectorAll(".theme-dot").forEach(function (b) { b.classList.remove("active"); });
+          btn.classList.add("active");
+          document.documentElement.style.setProperty("--accent", btn.dataset.accent);
+          document.documentElement.style.setProperty("--glow", btn.dataset.glow);
+          track("demo_theme_" + btn.title.toLowerCase().split(" ")[0]);
+        });
+      });
+
+      var sendBtn = document.getElementById("sendToPcBtn");
+      if (sendBtn) {
+        sendBtn.addEventListener("click", function () {
+          track("send_to_pc");
+          var shareUrl = window.location.origin + window.location.pathname + "?ab=b";
+          if (navigator.share) {
+            navigator.share({ title: "The Night Shift Desk", text: "Dark browser startpage for my desktop:", url: shareUrl }).catch(function () {});
+          } else if (navigator.clipboard) {
+            navigator.clipboard.writeText(shareUrl).then(function () {
+              sendBtn.textContent = "Link copied!";
+              setTimeout(function () { sendBtn.textContent = "Send to my PC"; }, 2000);
+            });
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
