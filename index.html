@@ -218,16 +218,16 @@
       <h2 id="look-title">Get the look</h2>
       <p class="lead">The pieces that make a dark desk feel calm at night.</p>
       <div class="look-grid">
-        <a class="look-item" data-q="monitor light bar" href="#" rel="sponsored noopener" target="_blank"><strong>Monitor light bar</strong><span>Soft desk light with no screen glare</span></a>
-        <a class="look-item" data-q="led strip lights for desk" href="#" rel="sponsored noopener" target="_blank"><strong>LED strip lights</strong><span>Backlight glow behind the desk or monitor</span></a>
-        <a class="look-item" data-q="dimmable desk lamp warm light" href="#" rel="sponsored noopener" target="_blank"><strong>Warm desk lamp</strong><span>Low amber light for late hours</span></a>
-        <a class="look-item" data-q="monitor arm desk mount" href="#" rel="sponsored noopener" target="_blank"><strong>Monitor arm</strong><span>Floating screen, clean desk surface</span></a>
-        <a class="look-item" data-q="large black desk mat" href="#" rel="sponsored noopener" target="_blank"><strong>Black desk mat</strong><span>The dark base most setups start with</span></a>
-        <a class="look-item" data-q="mechanical keyboard backlit" href="#" rel="sponsored noopener" target="_blank"><strong>Backlit keyboard</strong><span>Glowing keys for a dark room</span></a>
-        <a class="look-item" data-q="smart led light bulbs color" href="#" rel="sponsored noopener" target="_blank"><strong>Color smart bulbs</strong><span>Purple, teal or amber room glow</span></a>
-        <a class="look-item" data-q="cable management tray under desk" href="#" rel="sponsored noopener" target="_blank"><strong>Cable tray</strong><span>Hides the cables under the desk</span></a>
+        <a class="look-item" data-asin="B08DKQ3JG1" data-q="monitor light bar" href="#" rel="sponsored noopener" target="_blank"><strong>Monitor light bar</strong><span>Quntis light bar: soft light, no screen glare</span></a>
+        <a class="look-item" data-asin="B0991Q94KP" data-q="led strip lights for desk" href="#" rel="sponsored noopener" target="_blank"><strong>LED strip lights</strong><span>Govee RGBIC strip for the glow behind the desk</span></a>
+        <a class="look-item" data-asin="B0C277LF46" data-q="dimmable desk lamp warm light" href="#" rel="sponsored noopener" target="_blank"><strong>Warm desk lamp</strong><span>Honeywell dimmable lamp for late hours</span></a>
+        <a class="look-item" data-asin="B07T5SY43L" data-q="monitor arm desk mount" href="#" rel="sponsored noopener" target="_blank"><strong>Monitor arm</strong><span>HUANUO dual arm: floating screens, clean desk</span></a>
+        <a class="look-item" data-asin="B082F5ZLS5" data-q="large black desk mat" href="#" rel="sponsored noopener" target="_blank"><strong>Black desk mat</strong><span>Aothia desk pad, the dark base of the setup</span></a>
+        <a class="look-item" data-asin="B0D14N2QZF" data-q="mechanical keyboard backlit" href="#" rel="sponsored noopener" target="_blank"><strong>Backlit keyboard</strong><span>AULA F75 Pro, glowing keys for a dark room</span></a>
+        <a class="look-item" data-asin="B09B7NQT2K" data-q="smart led light bulbs color" href="#" rel="sponsored noopener" target="_blank"><strong>Color smart bulbs</strong><span>Govee bulbs for purple, teal or amber glow</span></a>
+        <a class="look-item" data-asin="B0BZ3GHM8N" data-q="cable management tray under desk" href="#" rel="sponsored noopener" target="_blank"><strong>Cable tray</strong><span>Metal mesh tray that hides the cables</span></a>
       </div>
-      <p class="disclosure">As an Amazon Associate I earn from qualifying purchases. Links open Amazon.com search results.</p>
+      <p class="disclosure">As an Amazon Associate I earn from qualifying purchases. Links go to Amazon.com.</p>
     </section>
 
     <footer>Setup previews for The Night Shift Desk • The startpage works offline, with no accounts and no tracking.</footer>
@@ -241,7 +241,9 @@
       var AMAZON_TAG = "deskaftershif-20";
       if (/^[a-z0-9-]+-2\d$/i.test(AMAZON_TAG)) {
         document.querySelectorAll("#getTheLook .look-item").forEach(function (a) {
-          a.href = "https://www.amazon.com/s?k=" + encodeURIComponent(a.getAttribute("data-q")) + "&tag=" + AMAZON_TAG;
+          var asin = a.getAttribute("data-asin");
+          a.href = asin ? "https://www.amazon.com/dp/" + asin + "?tag=" + AMAZON_TAG
+                        : "https://www.amazon.com/s?k=" + encodeURIComponent(a.getAttribute("data-q")) + "&tag=" + AMAZON_TAG;
           a.addEventListener("click", function () {
             try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: "click-amazon-" + a.getAttribute("data-q").replace(/\s+/g, "-"), event: true }); } catch (e) {}
           });
