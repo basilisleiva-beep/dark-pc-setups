@@ -44,6 +44,7 @@
     .sb-links { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:14px; }
     .sb-chip { font-size:.78rem; color:var(--muted); background:#161621; border:1px solid #242434; padding:5px 11px; border-radius:999px; }
     .compat { font-size:.78rem; color:var(--muted); margin-top:10px; display:block; }
+    .lite-link { display:inline-block; margin-top:14px; font-size:.9rem; color:var(--accent); }
     h2 { font-size:1.3rem; margin:0 0 16px; }
     .showcase-grid { columns:4 240px; column-gap:16px; }
     .showcase-card { break-inside:avoid; margin:0 0 16px; background:var(--panel); border:1px solid #262633; border-radius:14px; overflow:hidden; transition:transform .2s ease, border-color .2s ease; }
@@ -113,6 +114,7 @@
           <button class="cta-ghost" id="sendToPcBtn" type="button">Send to my PC</button>
           <a class="gumroad-button" id="gumroadHidden" href="https://thenightshiftdesk.gumroad.com/l/night-startpage" data-gumroad-single-product="true" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;" tabindex="-1" aria-hidden="true">Buy</a>
         </div>
+        <a class="lite-link" id="liteLink" href="https://thenightshiftdesk.gumroad.com/l/night-startpage-lite?utm_source=site&amp;utm_medium=web&amp;utm_campaign=lite">Not sure yet? Try the free Lite version</a>
         <span class="compat">Compatible with Chrome, Edge, Brave &amp; Firefox • Apple Pay / Card</span>
       </div>
     </section>
@@ -324,6 +326,8 @@
       }
       var ctaMain = document.getElementById("ctaMain");
       if (ctaMain) ctaMain.addEventListener("click", openCheckout);
+      var liteLink = document.getElementById("liteLink");
+      if (liteLink) liteLink.addEventListener("click", openCheckout);
       document.querySelectorAll(".showcase-link").forEach(function (a) {
         a.addEventListener("click", openCheckout);
       });
