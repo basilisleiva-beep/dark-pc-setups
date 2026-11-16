@@ -1,0 +1,43 @@
+/* Page structure only: where things go, not what they look like. */
+.app {
+  width: 100%;
+  max-width: calc(75rem + 2 * var(--space-8));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  padding: var(--space-6) var(--space-8) var(--space-8);
+}
+
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 40rem;
+  /* Auto margins here and on .widgets centre the content on tall monitors. */
+  margin: auto auto 0;
+  /* Scales with window height so a 768px laptop still fits the widgets. */
+  padding-block: clamp(var(--space-4), 7vh, 5.5rem) clamp(var(--space-8), 6vh, 4.5rem);
+  text-align: center;
+}
+
+/* auto-fit collapses empty tracks, so a hidden widget closes its cell. */
+.widgets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: var(--space-6);
+  align-items: stretch;
+  margin-bottom: auto;
+}
+
+@media (max-width: 40rem) {
+  .app {
+    padding-inline: var(--space-4);
+  }
+}

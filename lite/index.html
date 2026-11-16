@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" data-theme="purple">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>The Night Shift Desk</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <noscript><p class="noscript">The Night Shift Desk needs JavaScript to run. Please turn it on for this page.</p></noscript>
+  <!-- Reads short confirmations aloud to screen readers. -->
+  <div class="visually-hidden" role="status" data-announcer></div>
+  <div class="app">
+    <h1 class="visually-hidden">The Night Shift Desk</h1>
+    <div class="topbar">
+      <button class="button button--ghost" type="button" data-settings-open>Settings</button>
+    </div>
+
+    <header class="hero">
+      <div class="hero__clock" data-widget="clock">
+        <p class="greeting" data-clock-greeting></p>
+        <time class="clock" data-clock-time></time>
+        <p class="date" data-clock-date></p>
+      </div>
+
+      <form class="search" role="search" data-widget="search">
+        <label class="visually-hidden" for="search-query">Search the web</label>
+        <input class="search__input" id="search-query" type="search" data-search-input
+               placeholder="Search" autocomplete="off">
+        <label class="visually-hidden" for="search-engine">Search engine</label>
+        <select class="search__engine" id="search-engine" data-search-engine></select>
+      </form>
+    </header>
+
+    <main class="widgets">
+      <section class="card" aria-labelledby="links-title" data-widget="links">
+        <div class="card__header">
+          <h2 class="card__title" id="links-title">Quick links</h2>
+          <button class="text-button" type="button" data-links-edit data-focus-key="edit">Edit</button>
+        </div>
+        <ul class="links" data-links-list></ul>
+        <p class="links__status" role="status" data-links-status></p>
+
+        <dialog class="dialog" aria-labelledby="link-dialog-title" data-link-dialog>
+          <form class="dialog__form" data-link-form novalidate>
+            <h3 class="dialog__title" id="link-dialog-title" data-link-dialog-title>Add link</h3>
+            <div class="field">
+              <label for="link-url">Address</label>
+              <input class="input" id="link-url" type="text" inputmode="url" autocomplete="off"
+                     spellcheck="false" placeholder="example.com" required
+                     aria-describedby="link-url-error" data-link-url>
+              <p class="field__error" id="link-url-error" data-link-url-error></p>
+            </div>
+            <div class="field">
+              <label for="link-name">Name (optional)</label>
+              <input class="input" id="link-name" type="text" autocomplete="off" maxlength="40" data-link-name>
+            </div>
+            <div class="dialog__actions">
+              <button class="button button--ghost" type="button" data-link-cancel>Cancel</button>
+              <button class="button button--primary" type="submit">Save</button>
+            </div>
+          </form>
+        </dialog>
+      </section>
+
+      <section class="card" aria-labelledby="tasks-title" data-widget="tasks">
+        <div class="card__header">
+          <h2 class="card__title" id="tasks-title">Tonight</h2>
+          <button class="text-button" type="button" data-task-clear data-focus-key="clear" disabled>Clear completed</button>
+        </div>
+        <form class="task-form" data-task-form>
+          <label class="visually-hidden" for="task-input">New task</label>
+          <input class="input" id="task-input" type="text" autocomplete="off" maxlength="200"
+                 placeholder="Add a task" data-task-input data-focus-key="input">
+          <button class="button button--ghost" type="submit">Add</button>
+        </form>
+        <p class="tasks__empty" data-task-empty hidden>Nothing yet. What is tonight for?</p>
+        <ul class="tasks" data-task-list></ul>
+        <p class="links__status" role="status" data-task-status></p>
+      </section>
+
+      <section class="card card--center" aria-labelledby="timer-title" data-widget="timer">
+        <div class="card__header">
+          <h2 class="card__title" id="timer-title">Focus timer</h2>
+          <div class="timer__modes" role="group" aria-label="Timer mode">
+            <button class="timer__mode" type="button" data-timer-mode="work" aria-pressed="true">Focus</button>
+            <button class="timer__mode" type="button" data-timer-mode="break" aria-pressed="false">Break</button>
+          </div>
+        </div>
+        <p class="timer__time" role="timer" aria-label="Time remaining" data-timer-time></p>
+        <div class="timer__controls">
+          <button class="button button--primary" type="button" data-timer-toggle>Start</button>
+          <button class="button button--ghost" type="button" data-timer-reset>Reset</button>
+        </div>
+        <p class="timer__status" role="status" data-timer-status></p>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="drawer" aria-labelledby="settings-title" data-settings-panel>
+    <div class="drawer__header">
+      <h2 class="drawer__title" id="settings-title">Settings</h2>
+      <button class="button button--ghost" type="button" data-settings-close>Close</button>
+    </div>
+
+    <form class="settings" data-settings-form>
+      <p class="settings__demo">This is the free Lite version. The full version adds the Teal and Amber themes, backup export and import, and a Chrome and Edge extension: <a href="https://thenightshiftdesk.gumroad.com/l/night-startpage?utm_source=lite&amp;utm_medium=app&amp;utm_campaign=upgrade" target="_blank" rel="noopener">get the full version</a>.</p>
+
+      <fieldset class="settings__group">
+        <legend>Greeting and clock</legend>
+        <div class="field">
+          <label for="setting-name">Your name (optional)</label>
+          <input class="input" id="setting-name" name="name" type="text" autocomplete="off">
+        </div>
+        <div class="choices choices--row" role="group" aria-label="Clock format">
+          <label class="choice"><input type="radio" name="clockFormat" value="24h">24-hour</label>
+          <label class="choice"><input type="radio" name="clockFormat" value="12h">12-hour</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="settings__group">
+        <legend>Search</legend>
+        <div class="field">
+          <label for="setting-engine">Search engine</label>
+          <select class="input" id="setting-engine" name="searchEngine"></select>
+        </div>
+      </fieldset>
+
+      <fieldset class="settings__group">
+        <legend>Focus timer</legend>
+        <div class="settings__row">
+          <div class="field">
+            <label for="setting-work" data-range-label="workMinutes">Focus (minutes)</label>
+            <input class="input" id="setting-work" name="workMinutes" type="number" step="1" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="setting-break" data-range-label="breakMinutes">Break (minutes)</label>
+            <input class="input" id="setting-break" name="breakMinutes" type="number" step="1" inputmode="numeric">
+          </div>
+        </div>
+        <label class="choice"><input type="checkbox" name="sound">Play a chime when the timer ends</label>
+      </fieldset>
+
+      <fieldset class="settings__group">
+        <legend>Show on the page</legend>
+        <div class="choices">
+          <label class="choice"><input type="checkbox" data-toggle-widget="clock">Clock and greeting</label>
+          <label class="choice"><input type="checkbox" data-toggle-widget="search">Search</label>
+          <label class="choice"><input type="checkbox" data-toggle-widget="links">Quick links</label>
+          <label class="choice"><input type="checkbox" data-toggle-widget="tasks">Tasks</label>
+          <label class="choice"><input type="checkbox" data-toggle-widget="timer">Focus timer</label>
+        </div>
+      </fieldset>
+      <p class="settings__status" role="status" data-settings-status></p>
+    </form>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,22 @@
+/* Colour tokens. A theme only redefines the accent family; everything else
+   uses these variables, so adding a theme never means touching a component. */
+:root {
+  color-scheme: dark;
+
+  --bg: #0b0c10;
+  --surface: #14161c;
+  --surface-2: #1c1f27;
+  --text: #e8e6e3;
+  --text-muted: #9a9da6;
+  --border: #262a33;
+  --border-control: #6b7080;
+  --on-accent: #0b0c10;
+  --danger: #ff9b9b;
+}
+
+[data-theme="purple"] {
+  --accent: #b79cff;
+  --accent-soft: rgb(183 156 255 / 0.14);
+  --glow: rgb(183 156 255 / 0.16);
+}
+
