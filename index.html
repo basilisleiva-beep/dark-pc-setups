@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Dark desk and PC setups for late nights, and The Night Shift Desk: a calm new-tab page for people who work or study at night.">
   <meta name="p:domain_verify" content="6f50d6c13fb81b317ff7c9dda2d3a770">
-  <!-- gumroad.js turns .gumroad-button links into the checkout overlay (gumroad-embed.js is only for inline product embeds) -->
-  <script src="https://gumroad.com/js/gumroad.js" defer></script>
+  <script src="https://gumroad.com/js/gumroad-embed.js" defer></script>
   <style>
     :root { --bg:#0b0b10; --panel:#15151d; --text:#ecebf2; --muted:#a6a3b5; --accent:#b79cff; --accent-ink:#17122b; --glow:#2a2140; }
     * { box-sizing:border-box; }
@@ -19,7 +18,6 @@
     .product { display:grid; grid-template-columns:1.4fr 1fr; gap:32px; align-items:center; margin:24px 0 48px; padding:24px;
       background:radial-gradient(120% 140% at 30% 0%, var(--glow) 0%, var(--panel) 55%); border:1px solid #262633; border-radius:20px; transition:background .3s ease; }
     .product > * { min-width:0; }
-    .product img { width:100%; height:auto; border-radius:12px; display:block; }
     h1 { font-size:clamp(1.8rem,3.4vw,2.6rem); line-height:1.15; margin:0 0 12px; }
     .product p { color:var(--muted); margin:0 0 20px; }
     .cta-row { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
@@ -30,8 +28,6 @@
     .cta-ghost { display:inline-block; background:transparent; color:var(--text); border:1px solid #353548; font-weight:600;
       padding:13px 20px; border-radius:999px; font-size:.95rem; cursor:pointer; text-decoration:none; }
     .cta-ghost:hover { border-color:var(--accent); color:var(--accent); }
-    .price { display:block; margin-top:12px; font-size:.9rem; color:var(--muted); }
-    /* Interactive Live Sandbox (Variant B) */
     .sandbox { background:#0c0c12; border:1px solid #2a2a3a; border-radius:14px; padding:20px; min-height:300px;
       display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 20px 50px rgba(0,0,0,.55); }
     .sandbox-top { display:flex; justify-content:space-between; align-items:center; font-size:.8rem; color:var(--muted); }
@@ -48,12 +44,6 @@
     .sb-chip { font-size:.78rem; color:var(--muted); background:#161621; border:1px solid #242434; padding:5px 11px; border-radius:999px; }
     .compat { font-size:.78rem; color:var(--muted); margin-top:10px; display:block; }
     h2 { font-size:1.3rem; margin:0 0 16px; }
-    .gallery { columns:4 220px; column-gap:14px; }
-    .gallery img { width:100%; height:auto; margin:0 0 14px; border-radius:12px; display:block; break-inside:avoid; }
-    footer { padding:32px 0 48px; color:var(--muted); font-size:.85rem; }
-    [data-variant="a"] .only-b { display:none !important; }
-    [data-variant="b"] .only-a { display:none !important; }
-    @media (max-width:760px) { .product { grid-template-columns:1fr; padding:16px; gap:20px; } .gallery { columns:2; column-gap:10px; } .gallery img { margin-bottom:10px; } }
     .showcase-grid { columns:4 240px; column-gap:16px; }
     .showcase-card { break-inside:avoid; margin:0 0 16px; background:var(--panel); border:1px solid #262633; border-radius:14px; overflow:hidden; transition:transform .2s ease, border-color .2s ease; }
     .showcase-card:hover { transform:translateY(-3px); border-color:var(--accent); }
@@ -61,21 +51,18 @@
     .showcase-card img { width:100%; height:auto; display:block; }
     .showcase-card figcaption { padding:10px 14px; font-size:.82rem; color:var(--muted); border-top:1px solid #222230; background:#12121a; }
     .showcase-card figcaption strong { display:block; color:var(--text); font-size:.88rem; margin-bottom:2px; }
-    @media (max-width:760px) { .showcase-grid { columns:2; column-gap:10px; } .showcase-card { margin-bottom:10px; } }
+    footer { padding:32px 0 48px; color:var(--muted); font-size:.85rem; }
+    @media (max-width:760px) { .product { grid-template-columns:1fr; padding:16px; gap:20px; } .showcase-grid { columns:2; column-gap:10px; } .showcase-card { margin-bottom:10px; } }
   </style>
 </head>
-<body data-variant="a">
+<body>
   <div class="wrap">
     <header>
       <p>The Night Shift Desk</p>
     </header>
 
     <section class="product" aria-labelledby="product-title">
-      <!-- Variant A: Static Image -->
-      <img class="only-a" src="img/the-night-shift-desk.png" alt="The Night Shift Desk start page: clock, search, quick links, tasks and a focus timer on a dark background" width="1280" height="720">
-
-      <!-- Variant B: Interactive Live Sandbox -->
-      <div class="sandbox only-b" aria-label="Interactive live demo of The Night Shift Desk">
+      <div class="sandbox" aria-label="Interactive live demo of The Night Shift Desk">
         <div class="sandbox-top">
           <span>LIVE INTERACTIVE DEMO</span>
           <div class="theme-dots" role="group" aria-label="Theme selector">
@@ -107,20 +94,14 @@
       </div>
 
       <div>
-        <h1 id="product-title" class="only-a">A calm new-tab page for late nights</h1>
-        <h1 class="only-b">Turn every new tab into a calm dark workspace</h1>
-
-        <p class="only-a">Clock, search, quick links, tonight's tasks and a focus timer, in three soft glow themes. Works offline, no accounts, no tracking.</p>
-        <p class="only-b">Test the live clock, focus timer, and 3 ambient themes on the left. Instant download — delivered to your email for your desktop browser.</p>
-
+        <h1 id="product-title">Turn every new tab into a calm dark workspace</h1>
+        <p>Test the live clock, focus timer, and 3 ambient themes on the left. Instant download — delivered to your email for your desktop browser.</p>
         <div class="cta-row">
-          <a class="cta only-a" id="ctaA" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=ab_a">Get it</a>
-          <a class="cta only-b" id="ctaB" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=ab_b">Get Startpage — €7</a>
-          <a class="gumroad-button" id="gumroadHidden" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=ab_b" data-gumroad-single-product="true" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;" tabindex="-1" aria-hidden="true">Buy</a>
-          <button class="cta-ghost only-b" id="sendToPcBtn" type="button">Send to my PC</button>
+          <a class="cta" id="ctaMain" href="https://thenightshiftdesk.gumroad.com/l/night-startpage">Get Startpage — €7</a>
+          <button class="cta-ghost" id="sendToPcBtn" type="button">Send to my PC</button>
+          <a class="gumroad-button" id="gumroadHidden" href="https://thenightshiftdesk.gumroad.com/l/night-startpage" data-gumroad-single-product="true" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;" tabindex="-1" aria-hidden="true">Buy</a>
         </div>
-        <span class="price only-a">From €7 on Gumroad</span>
-        <span class="compat only-b">Compatible with Chrome, Edge, Brave &amp; Firefox • Apple Pay / Card</span>
+        <span class="compat">Compatible with Chrome, Edge, Brave &amp; Firefox • Apple Pay / Card</span>
       </div>
     </section>
 
@@ -146,8 +127,8 @@
       </figure>
       <figure class="showcase-card">
         <a class="showcase-link" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase">
-          <img src="showcase/04-slice-links-tasks.png" alt="Quick Links & Tonight's Tasks — Keyboard-friendly shortcuts and minimal task list" loading="lazy">
-          <figcaption><strong>Quick Links & Tonight's Tasks</strong>Keyboard-friendly shortcuts and minimal task list</figcaption>
+          <img src="showcase/04-slice-links-tasks.png" alt="Quick Links &amp; Tonight's Tasks — Keyboard-friendly shortcuts and minimal task list" loading="lazy">
+          <figcaption><strong>Quick Links &amp; Tonight's Tasks</strong>Keyboard-friendly shortcuts and minimal task list</figcaption>
         </a>
       </figure>
       <figure class="showcase-card">
@@ -158,8 +139,8 @@
       </figure>
       <figure class="showcase-card">
         <a class="showcase-link" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase">
-          <img src="showcase/06-slice-settings.png" alt="Custom Settings Panel — Personalize greeting, clock format, search engine & glow" loading="lazy">
-          <figcaption><strong>Custom Settings Panel</strong>Personalize greeting, clock format, search engine & glow</figcaption>
+          <img src="showcase/06-slice-settings.png" alt="Custom Settings Panel — Personalize greeting, clock format, search engine &amp; glow" loading="lazy">
+          <figcaption><strong>Custom Settings Panel</strong>Personalize greeting, clock format, search engine &amp; glow</figcaption>
         </a>
       </figure>
       <figure class="showcase-card">
@@ -182,8 +163,8 @@
       </figure>
       <figure class="showcase-card">
         <a class="showcase-link" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase">
-          <img src="showcase/10-slice-settings-teal.png" alt="Theme & Layout Controls — Instant offline configuration stored locally" loading="lazy">
-          <figcaption><strong>Theme & Layout Controls</strong>Instant offline configuration stored locally</figcaption>
+          <img src="showcase/10-slice-settings-teal.png" alt="Theme &amp; Layout Controls — Instant offline configuration stored locally" loading="lazy">
+          <figcaption><strong>Theme &amp; Layout Controls</strong>Instant offline configuration stored locally</figcaption>
         </a>
       </figure>
       <figure class="showcase-card">
@@ -206,14 +187,14 @@
       </figure>
       <figure class="showcase-card">
         <a class="showcase-link" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase">
-          <img src="showcase/14-pin-purple.png" alt="Vertical Preview • Purple — Mobile & desktop startpage preview" loading="lazy">
-          <figcaption><strong>Vertical Preview • Purple</strong>Mobile & desktop startpage preview</figcaption>
+          <img src="showcase/14-pin-purple.png" alt="Vertical Preview • Purple — Mobile &amp; desktop startpage preview" loading="lazy">
+          <figcaption><strong>Vertical Preview • Purple</strong>Mobile &amp; desktop startpage preview</figcaption>
         </a>
       </figure>
       <figure class="showcase-card">
         <a class="showcase-link" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase">
-          <img src="showcase/15-pin-teal.png" alt="Vertical Preview • Teal — Minimal clock, search & focus dashboard" loading="lazy">
-          <figcaption><strong>Vertical Preview • Teal</strong>Minimal clock, search & focus dashboard</figcaption>
+          <img src="showcase/15-pin-teal.png" alt="Vertical Preview • Teal — Minimal clock, search &amp; focus dashboard" loading="lazy">
+          <figcaption><strong>Vertical Preview • Teal</strong>Minimal clock, search &amp; focus dashboard</figcaption>
         </a>
       </figure>
       <figure class="showcase-card">
@@ -223,43 +204,27 @@
         </a>
       </figure>
     </div>
-    <footer>Setup photos by Unsplash and Pixabay contributors, credited on each Pin.</footer>
+    <footer>Setup previews for The Night Shift Desk • Works offline, no accounts, no tracking.</footer>
   </div>
 
   <script>
     (function () {
-      var params = new URLSearchParams(window.location.search);
-      var forced = params.get("ab");
-      // Storage can be blocked (private mode, in-app browsers): never let that stop the page script.
-      var stored = null;
-      try { stored = localStorage.getItem("nsd_ab_variant"); } catch (e) {}
-      var variant = (forced === "a" || forced === "b") ? forced : stored;
-      if (variant !== "a" && variant !== "b") {
-        variant = Math.random() < 0.5 ? "a" : "b";
-      }
-      try { localStorage.setItem("nsd_ab_variant", variant); } catch (e) {}
-      document.body.setAttribute("data-variant", variant);
-
-      function track(eventName) {
-        try {
-          var log = JSON.parse(localStorage.getItem("nsd_ab_events") || "[]");
-          log.push({ v: variant, ev: eventName, pin: params.get("pin") || "", t: Date.now() });
-          if (log.length > 50) log = log.slice(-50);
-          localStorage.setItem("nsd_ab_events", JSON.stringify(log));
-        } catch (e) {}
-      }
-      track("view");
-
-      var ctaA = document.getElementById("ctaA");
-      var ctaB = document.getElementById("ctaB");
-      if (ctaA) ctaA.addEventListener("click", function () { track("cta_click"); });
-      if (ctaB) ctaB.addEventListener("click", function (e) {
-        track("cta_click");
+      function openCheckout(e) {
         var gh = document.getElementById("gumroadHidden");
-        if (gh) { e.preventDefault(); gh.click(); }
+        if (gh && window.GumroadOverlay) {
+          e.preventDefault();
+          gh.click();
+        } else if (gh) {
+          e.preventDefault();
+          gh.click();
+        }
+      }
+      var ctaMain = document.getElementById("ctaMain");
+      if (ctaMain) ctaMain.addEventListener("click", openCheckout);
+      document.querySelectorAll(".showcase-link").forEach(function (a) {
+        a.addEventListener("click", openCheckout);
       });
 
-      // Interactive Sandbox Clock & Focus Timer (Variant B)
       function updateClock() {
         var d = new Date();
         var hh = String(d.getHours()).padStart(2, "0");
@@ -281,7 +246,6 @@
       }
       if (startBtn) {
         startBtn.addEventListener("click", function () {
-          track("demo_timer_toggle");
           if (timerId) { clearInterval(timerId); timerId = null; startBtn.textContent = "Start"; }
           else {
             startBtn.textContent = "Pause";
@@ -302,22 +266,20 @@
           btn.classList.add("active");
           document.documentElement.style.setProperty("--accent", btn.dataset.accent);
           document.documentElement.style.setProperty("--glow", btn.dataset.glow);
-          track("demo_theme_" + btn.title.toLowerCase().split(" ")[0]);
         });
       });
 
       var sendBtn = document.getElementById("sendToPcBtn");
       if (sendBtn) {
         sendBtn.addEventListener("click", function () {
-          track("send_to_pc");
-          var shareUrl = window.location.origin + window.location.pathname + "?ab=b";
+          var shareUrl = window.location.origin + window.location.pathname;
           if (navigator.share) {
             navigator.share({ title: "The Night Shift Desk", text: "Dark browser startpage for my desktop:", url: shareUrl }).catch(function () {});
           } else if (navigator.clipboard) {
             navigator.clipboard.writeText(shareUrl).then(function () {
               sendBtn.textContent = "Link copied!";
               setTimeout(function () { sendBtn.textContent = "Send to my PC"; }, 2000);
-            }).catch(function () {});
+            });
           }
         });
       }
