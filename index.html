@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Dark desk and PC setups for late nights, and The Night Shift Desk: a calm new-tab page for people who work or study at night.">
   <meta name="p:domain_verify" content="6f50d6c13fb81b317ff7c9dda2d3a770">
-  <script src="https://gumroad.com/js/gumroad-embed.js" defer></script>
+  <!-- gumroad.js turns .gumroad-button links into the checkout overlay (gumroad-embed.js is only for inline product embeds) -->
+  <script src="https://gumroad.com/js/gumroad.js" defer></script>
   <style>
     :root { --bg:#0b0b10; --panel:#15151d; --text:#ecebf2; --muted:#a6a3b5; --accent:#b79cff; --accent-ink:#17122b; --glow:#2a2140; }
     * { box-sizing:border-box; }
@@ -140,11 +141,14 @@
     (function () {
       var params = new URLSearchParams(window.location.search);
       var forced = params.get("ab");
-      var variant = (forced === "a" || forced === "b") ? forced : localStorage.getItem("nsd_ab_variant");
+      // Storage can be blocked (private mode, in-app browsers): never let that stop the page script.
+      var stored = null;
+      try { stored = localStorage.getItem("nsd_ab_variant"); } catch (e) {}
+      var variant = (forced === "a" || forced === "b") ? forced : stored;
       if (variant !== "a" && variant !== "b") {
         variant = Math.random() < 0.5 ? "a" : "b";
       }
-      localStorage.setItem("nsd_ab_variant", variant);
+      try { localStorage.setItem("nsd_ab_variant", variant); } catch (e) {}
       document.body.setAttribute("data-variant", variant);
 
       function track(eventName) {
@@ -220,7 +224,7 @@
             navigator.clipboard.writeText(shareUrl).then(function () {
               sendBtn.textContent = "Link copied!";
               setTimeout(function () { sendBtn.textContent = "Send to my PC"; }, 2000);
-            });
+            }).catch(function () {});
           }
         });
       }
