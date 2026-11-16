@@ -54,6 +54,13 @@
     [data-variant="a"] .only-b { display:none !important; }
     [data-variant="b"] .only-a { display:none !important; }
     @media (max-width:760px) { .product { grid-template-columns:1fr; padding:16px; gap:20px; } .gallery { columns:2; column-gap:10px; } .gallery img { margin-bottom:10px; } }
+    .showcase-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:16px; }
+    .showcase-card { margin:0; background:var(--panel); border:1px solid #262633; border-radius:14px; overflow:hidden; transition:transform .2s ease, border-color .2s ease; }
+    .showcase-card:hover { transform:translateY(-3px); border-color:var(--accent); }
+    .showcase-card a { display:block; text-decoration:none; color:inherit; }
+    .showcase-card img { width:100%; height:auto; display:block; }
+    .showcase-card figcaption { padding:10px 12px; font-size:.82rem; color:var(--muted); border-top:1px solid #222230; }
+    .showcase-card figcaption strong { display:block; color:var(--text); font-size:.88rem; margin-bottom:2px; }
   </style>
 </head>
 <body data-variant="a">
@@ -115,24 +122,104 @@
       </div>
     </section>
 
-    <h2>Dark desk setups</h2>
-    <div class="gallery">
-      <img src="pins/pin_01_aesthetic_hero_16cb33.png" alt="Dark PC Setup with Purple LED Backlight" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_02_floating_gear_69fc73.png" alt="Dark Dual Monitor Setup with Teal Glow" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_03_mood_palette_b7e806.png" alt="Red LED Gaming Room with Multiple Monitors" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_04_dual_mode_856743.png" alt="Teal PC Setup with Backlit Keyboard" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_12don5bp.png" alt="Dark desk setup" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_3nxtjo5k.png" alt="Dark desk setup" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_3txaguhu.png" alt="Dark desk setup" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_3xdpbpeb.png" alt="Dark desk setup" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_5y7v0btk.png" alt="Dark desk setup" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_6m6mpkr6.png" alt="Dark desk setup" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_9sjpblff.png" alt="Dark desk setup" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_ebxwmjsr.png" alt="Dark desk setup" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_efqgeyzz.png" alt="Dark desk setup" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_ekteo7b2.png" alt="Dark desk setup" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_fl2myuov.png" alt="Dark desk setup" width="1000" height="1500" loading="lazy">
-      <img src="pins/pin_gwvfntsy.png" alt="Dark desk setup" width="1000" height="1500" loading="lazy">
+    <h2>Inside The Night Shift Desk</h2>
+    <div class="showcase-grid">
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/01-onscreen-blue-desk-teal.png" alt="On-Screen Setup • Teal Glow — Live startpage running on a dark dual-screen desk" loading="lazy">
+          <figcaption><strong>On-Screen Setup • Teal Glow</strong>Live startpage running on a dark dual-screen desk</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/02-onscreen-teal-ultrawide.png" alt="Ultrawide Desk • Teal Theme — Full-width calm workspace without clutter" loading="lazy">
+          <figcaption><strong>Ultrawide Desk • Teal Theme</strong>Full-width calm workspace without clutter</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/03-slice-focus-timer.png" alt="Focus Timer Slice — Built-in Pomodoro countdown for late-night deep work" loading="lazy">
+          <figcaption><strong>Focus Timer Slice</strong>Built-in Pomodoro countdown for late-night deep work</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/04-slice-links-tasks.png" alt="Quick Links & Tonight's Tasks — Keyboard-friendly shortcuts and minimal task list" loading="lazy">
+          <figcaption><strong>Quick Links & Tonight's Tasks</strong>Keyboard-friendly shortcuts and minimal task list</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/05-slice-three-themes.png" alt="Three Soft Glow Themes — Switch between Purple, Teal, and Amber in one click" loading="lazy">
+          <figcaption><strong>Three Soft Glow Themes</strong>Switch between Purple, Teal, and Amber in one click</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/06-slice-settings.png" alt="Custom Settings Panel — Personalize greeting, clock format, search engine & glow" loading="lazy">
+          <figcaption><strong>Custom Settings Panel</strong>Personalize greeting, clock format, search engine & glow</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/07-view-purple-1080p.png" alt="Purple Glow • Full View — Default calm night-shift dashboard layout" loading="lazy">
+          <figcaption><strong>Purple Glow • Full View</strong>Default calm night-shift dashboard layout</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/08-view-teal-1080p.png" alt="Teal Glow • Full View — Cool midnight teal accent for dark rooms" loading="lazy">
+          <figcaption><strong>Teal Glow • Full View</strong>Cool midnight teal accent for dark rooms</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/09-view-amber-1080p.png" alt="Amber Glow • Full View — Warm low-blue-light aesthetic for late hours" loading="lazy">
+          <figcaption><strong>Amber Glow • Full View</strong>Warm low-blue-light aesthetic for late hours</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/10-slice-settings-teal.png" alt="Theme & Layout Controls — Instant offline configuration stored locally" loading="lazy">
+          <figcaption><strong>Theme & Layout Controls</strong>Instant offline configuration stored locally</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/11-slice-links-edit-purple.png" alt="Editable Quick Links — Add, reorder, or customize your daily sites" loading="lazy">
+          <figcaption><strong>Editable Quick Links</strong>Add, reorder, or customize your daily sites</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/12-slice-timer-done-amber.png" alt="Session Complete State — Calm visual cue when your focus block finishes" loading="lazy">
+          <figcaption><strong>Session Complete State</strong>Calm visual cue when your focus block finishes</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/13-view-laptop-purple.png" alt="Compact Laptop View — Scales cleanly from 13-inch laptops to ultrawides" loading="lazy">
+          <figcaption><strong>Compact Laptop View</strong>Scales cleanly from 13-inch laptops to ultrawides</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/14-pin-purple.png" alt="Vertical Preview • Purple — Mobile & desktop startpage preview" loading="lazy">
+          <figcaption><strong>Vertical Preview • Purple</strong>Mobile & desktop startpage preview</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/15-pin-teal.png" alt="Vertical Preview • Teal — Minimal clock, search & focus dashboard" loading="lazy">
+          <figcaption><strong>Vertical Preview • Teal</strong>Minimal clock, search & focus dashboard</figcaption>
+        </a>
+      </figure>
+      <figure class="showcase-card">
+        <a class="gumroad-button" href="https://thenightshiftdesk.gumroad.com/l/night-startpage?ref=showcase" data-gumroad-single-product="true">
+          <img src="showcase/16-pin-amber.png" alt="Vertical Preview • Amber — Warm night-mode browser startpage" loading="lazy">
+          <figcaption><strong>Vertical Preview • Amber</strong>Warm night-mode browser startpage</figcaption>
+        </a>
+      </figure>
     </div>
     <footer>Setup photos by Unsplash and Pixabay contributors, credited on each Pin.</footer>
   </div>
